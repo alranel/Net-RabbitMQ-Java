@@ -1,4 +1,6 @@
     - added GPLv2, Apache and MPL licence texts
+    - minor code cleanup
+    - fixed POD glitches
 
 version 2.030101 (2011-02-12):
 

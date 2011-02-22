@@ -397,8 +397,8 @@ There are few classes you need to instantiate directly:
 
 =head1 CALLING METHODS
 
-See the client library original documentation to learn method signatures. This 
-module will take care of casting data types. You only need to take care to the 
+See the client library original documentation to learn about method signatures. This 
+module will take care of casting data types. You only need to take care of the 
 number of arguments which must match what the library is expecting, even if you 
 want to pass null values:
 
@@ -414,7 +414,7 @@ argument lists).
 
 In order to provide you with a better interface to the underlying library, some 
 methods are overloaded and augmented. Thus, for these methods you should combine
-the RabbitMQ client library with the following instructions:
+the RabbitMQ client library docs with the following instructions:
 
 =over 4
 
@@ -486,7 +486,7 @@ on them:
 
 This module provides some glue to use Perl code as callbacks for reacting to events
 thrown by the RabbitMQ client library. The library itself is multi-threading; however
-there's currently no way to share Java object between multiple Perl threads, so your 
+there's currently no way to share Java objects between multiple Perl threads, so your 
 application will need to have one connection per Perl thread. Thus, your callbacks
 will be executed in a single-threaded environment as soon as you want. The Java library
 will catch the events in the background and will put them in a queue so that you can
@@ -626,12 +626,12 @@ Some things will need future work:
 
 =over 4
 
-=item Implementation of the RpcClient class
+=item I<Implementation of the RpcClient class>
 
 It should be enabled explicitely by the user, so that we don't load an extra Java class that 
 we don't use.
 
-=item Full async support
+=item I<Full async support>
 
 An async mode would be useful to allow implementation with event-based frameworks such as 
 L<POE> and others. This requires a non-blocking behaviour of AMQP sync commands. It could
@@ -640,11 +640,11 @@ should accept a coderef as last argument and return immediately; the Java client
 should receive the C<tx.commit-ok> response in a separate Java thread and enqueue the 
 callback call.
 
-=item Compile java Helper code at install time
+=item I<Compile java Helper code at install time>
 
 This would speed up start-up.
 
-=item Provide named arguments to all methods
+=item I<Provide named arguments to all methods>
 
 This should be done at least on Channel methods. This module should then decide which Java
 signature to call.
