@@ -13,7 +13,7 @@ $factory->setUsername('guest');
 $factory->setPassword('guest');
 $factory->setVirtualHost('/');
 $factory->setHost($ENV{'MQHOST'} || "dev.rabbitmq.com");
-$factory->setPort(5672);
+$factory->setPort($ENV{'MQPORT'} || 5672);
 
 ok(my $conn = eval { $factory->newConnection })
     or diag($@->printStackTrace);

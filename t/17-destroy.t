@@ -12,6 +12,7 @@ isa_ok($factory, 'Net::RabbitMQ::Java::Client::ConnectionFactory');
 $factory->setUsername('guest');
 $factory->setPassword('guest');
 $factory->setHost($ENV{'MQHOST'} || "dev.rabbitmq.com");
+$factory->setPort($ENV{'MQPORT'} || 5672);
 
 {
     ok(my $conn = eval { $factory->newConnection })

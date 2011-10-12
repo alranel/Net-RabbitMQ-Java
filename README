@@ -47,6 +47,11 @@ the reader.  To build and test it:
   perl Makefile.PL
   make test
 
+To test against a specific server and/or port you can pass them as
+environment variables:
+
+  env MQHOST="localhost" MQPORT="5673" make test
+
 When you're ready to install the component:
 
   make install
@@ -55,4 +60,4 @@ It should now be ready to use.
 
 Thanks for reading!
 
--- Alessandro Ranellucci / aar@cpan.org / http://alex.primafila.net
+-- Alessandro Ranellucci / aar@cpan.org
