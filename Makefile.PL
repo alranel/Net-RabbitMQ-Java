@@ -26,7 +26,7 @@ my %WriteMakefileArgs = (
     'NAME' => 'Net::RabbitMQ::Java',
     'PREREQ_PM' => {
     },
-    'VERSION' => '2.030101',
+    'VERSION_FROM' => 'lib/Net/RabbitMQ/Java.pm',
     'test' => {
         'TESTS' => 't/*.t'
     },

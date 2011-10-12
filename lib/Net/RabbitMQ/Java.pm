@@ -3,7 +3,7 @@ package Net::RabbitMQ::Java;
 use strict;
 use warnings;
 
-our $VERSION = '2.030101';
+our $VERSION = '2.030102';
 
 use Data::UUID;
 use File::ShareDir qw(dist_dir);
