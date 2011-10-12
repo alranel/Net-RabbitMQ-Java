@@ -95,12 +95,12 @@ sub encode_ByteArray ($) {
     # this is very inefficient; an idea would be to 
     # convert to hexadecimal (base64?) and pass it as a String
     # to a Java helper object to call .getBytes() on
-    return [ unpack("C*", $string) ];
+    return [ unpack("c*", $string) ];
 }
 
 sub decode_ByteArray ($) {
     my $byteArray = shift;
-    return pack("C*", @$byteArray);
+    return pack("c*", @$byteArray);
 }
 
 sub encode_Map ($) {
@@ -153,8 +153,11 @@ sub encode_BasicProperties ($) {
 }
 
 # main code
+my $inited = 0;
 sub init {
     my ($class, %params) = @_;
+    return if $inited;
+    $inited = 1;
     
     # load Java code
     my $share_dir = dist_dir('Net-RabbitMQ-Java');
